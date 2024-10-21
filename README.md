@@ -65,6 +65,8 @@ Swagger documentation can be accessed at http://localhost:8082/swagger/index.htm
 
 ## API Documentation
 
+<img src="https://github.com/Suraj18893/goLang-Ecommerce/blob/master/diagram-export-10-21-2024-11_43_01-PM.svg">
+
 ### Admin Endpoints
 
 - **POST** `/admin/adminlogin`  
@@ -243,7 +245,6 @@ Swagger documentation can be accessed at http://localhost:8082/swagger/index.htm
 - **DELETE** `/users/wishlist/remove`  
   - **Description**: Remove a product from the wishlist.
  
-  <img src="https://github.com/Suraj18893/goLang-Ecommerce/blob/master/diagram-export-10-21-2024-11_43_01-PM.svg" width="100" height="100" ">
 
 
 
