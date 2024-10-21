@@ -246,6 +246,3 @@ Swagger documentation can be accessed at http://localhost:8082/swagger/index.htm
 - **DELETE** `/users/wishlist/remove`  
   - **Description**: Remove a product from the wishlist.
  
-
-
-
