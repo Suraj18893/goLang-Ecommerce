@@ -70,179 +70,150 @@ Swagger documentation can be accessed at http://localhost:8082/swagger/index.htm
 
 ### Admin Endpoints
 
-- **POST** `/admin/adminlogin`  
-  - **Description**: Admin Login.
+```mermaid
+flowchart TD
+A1[POST /admin/adminlogin] -->|Logs in the Admin| A2[Admin Dashboard]
+```
 
-- **POST** `/admin/category/add`  
-  - **Description**: Add a new category.
+```mermaid
+flowchart TD
+B1[Admin Dashboard] -->|Navigate to| B2[Manage Categories]
+B2 -->|Add a Category| B3[POST /admin/category/add]
+B2 -->|Delete a Category| B4[DELETE /admin/category/delete]
+B2 -->|Update a Category| B5[PATCH /admin/category/update]
+```
 
-- **DELETE** `/admin/category/delete`  
-  - **Description**: Delete an existing category.
+```mermaid
+flowchart TD
+C1[Admin Dashboard] -->|Navigate to| C2[Manage Coupons]
+C2 -->|List Coupons| C3[GET /admin/coupons]
+C2 -->|Add a Coupon| C4[POST /admin/coupons/create]
+C2 -->|Expire a Coupon| C5[POST /admin/coupons/expire]
+```
 
-- **PATCH** `/admin/category/update`  
-  - **Description**: Update an existing category.
+```mermaid
+flowchart TD
+D1[Admin Dashboard] -->|Navigate to| D2[Manage Inventories]
+D2 -->|Add Inventory| D3[POST /admin/inventories/add]
+D2 -->|Add Inventory Image| D4[POST /admin/inventories/add-image]
+D2 -->|Delete Inventory| D5[DELETE /admin/inventories/delete]
+D2 -->|Delete Inventory Image| D6[DELETE /admin/inventories/delete-image]
+D2 -->|Update Inventory| D7[PATCH /admin/inventories/update]
+D2 -->|Update Inventory Image| D8[PATCH /admin/inventories/update-image]
+```
 
-- **GET** `/admin/coupons`  
-  - **Description**: List all available coupons.
+```mermaid
+flowchart TD
+E1[Admin Dashboard] -->|Navigate to| E2[Manage Offers]
+E2 -->|List Offers| E3[GET /admin/offers]
+E2 -->|Add Offer| E4[POST /admin/offers/create]
+E2 -->|Expire Offer| E5[POST /admin/offers/expire]
+```
 
-- **POST** `/admin/coupons/create`  
-  - **Description**: Create a new coupon.
+```mermaid
 
-- **POST** `/admin/coupons/expire`  
-  - **Description**: Make a coupon invalid/expired.
+flowchart TD
+F1[Admin Dashboard] -->|Navigate to| F2[Manage Orders]
+F2 -->|List Admin Orders| F3[GET /admin/orders]
+F2 -->|Update Payment Status| F4[PATCH /admin/orders/edit/mark-as-paid]
+F2 -->|Update Order Status| F5[PATCH /admin/orders/edit/status]
+```
 
-- **POST** `/admin/inventories/add`  
-  - **Description**: Add a new inventory item.
+```mermaid
 
-- **POST** `/admin/inventories/add-image`  
-  - **Description**: Add an image to an inventory item.
+flowchart TD
+G1[Admin Dashboard] -->|Navigate to| G2[Manage Payment Methods]
+G2 -->|List Payment Methods| G3[GET /admin/paymentmethods]
+G2 -->|Add New Payment Method| G4[POST /admin/paymentmethods/add]
+G2 -->|Remove Payment Method| G5[DELETE /admin/paymentmethods/remove]
+```
 
-- **DELETE** `/admin/inventories/delete`  
-  - **Description**: Delete an existing inventory item.
+```mermaid
 
-- **DELETE** `/admin/inventories/delete-image`  
-  - **Description**: Delete an image from an inventory item.
+flowchart TD
+H1[Admin Dashboard] -->|Navigate to| H2[Manage Products]
+H2 -->|List Products| H3[GET /admin/products]
+```
 
-- **PATCH** `/admin/inventories/update`  
-  - **Description**: Update an inventory item.
+```mermaid
 
-- **PATCH** `/admin/inventories/update-image`  
-  - **Description**: Update an image for an inventory item.
+flowchart TD
+I1[Admin Dashboard] -->|Navigate to| I2[View Sales Reports]
+I2 -->|Annual Sales Report| I3[GET /admin/sales/annual]
+I2 -->|Custom Sales Report| I4[POST /admin/sales/custom]
+I2 -->|Daily Sales Report| I5[GET /admin/sales/daily]
+I2 -->|Monthly Sales Report| I6[GET /admin/sales/monthly]
+I2 -->|Weekly Sales Report| I7[GET /admin/sales/weekly]
+```
 
-- **GET** `/admin/offers`  
-  - **Description**: List all offers.
+```mermaid
 
-- **POST** `/admin/offers/create`  
-  - **Description**: Create a new offer.
+flowchart TD
+J1[Admin Dashboard] -->|Navigate to| J2[Manage Users]
+J2 -->|Block User| J3[POST /admin/users/block]
+J2 -->|Get Users| J4[GET /admin/users/getusers]
+J2 -->|Unblock User| J5[POST /admin/users/unblock]
+```
 
-- **POST** `/admin/offers/expire`  
-  - **Description**: Expire an offer.
-
-- **GET** `/admin/orders`  
-  - **Description**: View all admin orders.
-
-- **PATCH** `/admin/orders/edit/mark-as-paid`  
-  - **Description**: Update the payment status of an order.
-
-- **PATCH** `/admin/orders/edit/status`  
-  - **Description**: Update the status of an order.
-
-- **GET** `/admin/paymentmethods`  
-  - **Description**: View all payment methods.
-
-- **POST** `/admin/paymentmethods/add`  
-  - **Description**: Add a new payment method.
-
-- **DELETE** `/admin/paymentmethods/remove`  
-  - **Description**: Remove an existing payment method.
-
-- **GET** `/admin/products`  
-  - **Description**: List all products.
-
-- **GET** `/admin/sales/annual`  
-  - **Description**: View the annual sales report.
-
-- **POST** `/admin/sales/custom`  
-  - **Description**: Generate a custom sales report.
-
-- **GET** `/admin/sales/daily`  
-  - **Description**: View the daily sales report.
-
-- **GET** `/admin/sales/monthly`  
-  - **Description**: View the monthly sales report.
-
-- **GET** `/admin/sales/weekly`  
-  - **Description**: View the weekly sales report.
-
-- **POST** `/admin/users/block`  
-  - **Description**: Block a user.
-
-- **GET** `/admin/users/getusers`  
-  - **Description**: View all users.
-
-- **POST** `/admin/users/unblock`  
-  - **Description**: Unblock a user.
 
 ### User Endpoints
 
-- **GET** `/products`  
-  - **Description**: List all products.
+```mermaid
+flowchart TD
+    A1[POST /users/login] -->|Logs in the User| A2[User Dashboard]
+```
+```mermaid
 
-- **GET** `/products/category`  
-  - **Description**: Filter products by category.
+flowchart TD
+    B1[User Dashboard] -->|Navigate to| B2[Browse Products]
+    B2 -->|List Products| B3[GET /products]
+    B2 -->|Filter Products by Category| B4[GET /products/category]
+    B2 -->|Show Product Details| B5[GET /products/details]
+    B2 -->|Search Products| B6[GET /products/search]
+```
 
-- **GET** `/products/details`  
-  - **Description**: Show product details.
+```mermaid
 
-- **GET** `/products/search`  
-  - **Description**: Search for products.
+flowchart TD
+    C1[User Dashboard] -->|Navigate to| C2[Manage Cart]
+    C2 -->|Get Cart| C3[GET /users/cart]
+    C2 -->|Remove from Cart| C4[DELETE /users/cart/remove]
+    C2 -->|Decrease Quantity in Cart| C5[POST /users/cart/updateQuantity/minus]
+    C2 -->|Increase Quantity in Cart| C6[POST /users/cart/updateQuantity/plus]
+    C2 -->|Checkout| C7[GET /users/check-out]
+    C7 -->|Place Order| C8[POST /users/check-out/order]
+    C7 -->|Download Invoice PDF| C9[GET /users/check-out/order/download-invoice]
+```
 
-- **GET** `/users/cart`  
-  - **Description**: Get the user's cart.
+```mermaid
 
-- **DELETE** `/users/cart/remove`  
-  - **Description**: Remove a product from the cart.
+flowchart TD
+    D1[User Dashboard] -->|Navigate to| D2[Manage Wishlist]
+    D2 -->|Add Product to Wishlist| D3[POST /users/home/add-to-wishlist]
+    D2 -->|Get Wishlist| D4[GET /users/wishlist]
+    D2 -->|Remove Product from Wishlist| D5[DELETE /users/wishlist/remove]
+```
 
-- **POST** `/users/cart/updateQuantity/minus`  
-  - **Description**: Decrease the quantity of a product in the cart.
+```mermaid
 
-- **POST** `/users/cart/updateQuantity/plus`  
-  - **Description**: Increase the quantity of a product in the cart.
+flowchart TD
+    E1[User Dashboard] -->|Navigate to| E2[Manage Profile]
+    E2 -->|Get User Addresses| E3[GET /users/profile/address]
+    E2 -->|Add User Address| E4[POST /users/profile/address/add]
+    E2 -->|Get User Profile Details| E5[GET /users/profile/details]
+    E2 -->|Edit User Profile| E6[PATCH /users/profile/edit]
+    E2 -->|Get User Orders| E7[GET /users/profile/orders]
+    E2 -->|Cancel Order| E8[POST /users/profile/orders/cancel]
+    E2 -->|Return Order| E9[POST /users/profile/orders/return]
+    E2 -->|Change User Password| E10[PATCH /users/profile/security/change-password]
+```
 
-- **GET** `/users/check-out`  
-  - **Description**: Proceed to checkout.
+```mermaid
 
-- **POST** `/users/check-out/order`  
-  - **Description**: Place an order.
+flowchart TD
+    F1[POST /users/signup] -->|Sign up the User| F2[Verify OTP]
+    F2 -->|Send OTP| F3[POST /users/otplogin]
+    F2 -->|Verify OTP| F4[POST /users/verifyotp]
+```
 
-- **GET** `/users/check-out/order/download-invoice`  
-  - **Description**: Download the invoice in PDF format.
-
-- **POST** `/users/home/add-to-cart`  
-  - **Description**: Add a product to the cart.
-
-- **POST** `/users/home/add-to-wishlist`  
-  - **Description**: Add a product to the wishlist.
-
-- **POST** `/users/login`  
-  - **Description**: User login.
-
-- **POST** `/users/otplogin`  
-  - **Description**: Send OTP for login.
-
-- **GET** `/users/profile/address`  
-  - **Description**: Get the user's saved addresses.
-
-- **POST** `/users/profile/address/add`  
-  - **Description**: Add a new address to the user's profile.
-
-- **GET** `/users/profile/details`  
-  - **Description**: Get the user's profile details.
-
-- **PATCH** `/users/profile/edit`  
-  - **Description**: Edit the user's profile information.
-
-- **GET** `/users/profile/orders`  
-  - **Description**: View the user's orders.
-
-- **POST** `/users/profile/orders/cancel`  
-  - **Description**: Cancel an order.
-
-- **POST** `/users/profile/orders/return`  
-  - **Description**: Return an order.
-
-- **PATCH** `/users/profile/security/change-password`  
-  - **Description**: Change the user's password.
-
-- **POST** `/users/signup`  
-  - **Description**: User signup.
-
-- **POST** `/users/verifyotp`  
-  - **Description**: Verify OTP for signup.
-
-- **GET** `/users/wishlist`  
-  - **Description**: View the user's wishlist.
-
-- **DELETE** `/users/wishlist/remove`  
-  - **Description**: Remove a product from the wishlist.
  
